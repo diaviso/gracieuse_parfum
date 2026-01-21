@@ -5,20 +5,20 @@
 
 /* Variables CSS */
 :root {
-    --color-primary: #d4a5a5;
-    --color-primary-dark: #c48b8b;
-    --color-primary-light: #f5e6e6;
-    --color-accent: #b76e79;
+    --color-primary: #C12872;
+    --color-primary-dark: #A01F5C;
+    --color-primary-light: #F8E5F0;
+    --color-accent: #C12872;
     --color-gold: #c9a962;
     --color-text: #4a4a4a;
     --color-text-light: #7a7a7a;
     --color-white: #ffffff;
-    --color-bg: #fdfbfb;
-    --color-bg-alt: #faf5f5;
+    --color-bg: #FEFBFC;
+    --color-bg-alt: #FDF5F9;
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Montserrat', Arial, sans-serif;
-    --shadow-soft: 0 4px 20px rgba(180, 110, 121, 0.1);
-    --shadow-medium: 0 8px 30px rgba(180, 110, 121, 0.15);
+    --shadow-soft: 0 4px 20px rgba(193, 40, 114, 0.1);
+    --shadow-medium: 0 8px 30px rgba(193, 40, 114, 0.15);
     --transition: all 0.3s ease;
     --border-radius: 8px;
 }
@@ -102,12 +102,12 @@ p {
 .btn-primary {
     background: linear-gradient(135deg, var(--color-accent), var(--color-primary-dark));
     color: var(--color-white);
-    box-shadow: 0 4px 15px rgba(183, 110, 121, 0.3);
+    box-shadow: 0 4px 15px rgba(193, 40, 114, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(183, 110, 121, 0.4);
+    box-shadow: 0 6px 25px rgba(193, 40, 114, 0.4);
 }
 
 .btn-full {
@@ -224,9 +224,9 @@ p {
     inset: 0;
     background: linear-gradient(
         135deg,
-        rgba(183, 110, 121, 0.7) 0%,
-        rgba(212, 165, 165, 0.6) 50%,
-        rgba(196, 139, 139, 0.7) 100%
+        rgba(193, 40, 114, 0.7) 0%,
+        rgba(193, 40, 114, 0.6) 50%,
+        rgba(160, 31, 92, 0.7) 100%
     );
 }
 
