@@ -6,51 +6,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // =====================================================
-    // Navigation - Scroll Effect
-    // =====================================================
-    const navbar = document.getElementById('navbar');
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    // Navbar scroll effect
-    function handleNavbarScroll() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    }
-
-    window.addEventListener('scroll', handleNavbarScroll);
-    handleNavbarScroll(); // Check on load
-
-    // Mobile menu toggle
-    navToggle.addEventListener('click', function() {
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-    });
-
-    // Close mobile menu on link click
-    navLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    });
-
-    // Close mobile menu on outside click
-    document.addEventListener('click', function(e) {
-        if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-
-    // =====================================================
     // Smooth Scroll for Anchor Links
     // =====================================================
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
@@ -60,8 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                const navbarHeight = navbar.offsetHeight;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                 
                 window.scrollTo({
                     top: targetPosition,
@@ -206,33 +160,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
-
-    // =====================================================
-    // Active Navigation Link on Scroll
-    // =====================================================
-    const sections = document.querySelectorAll('section[id]');
-
-    function highlightNavLink() {
-        const scrollPosition = window.scrollY + navbar.offsetHeight + 100;
-
-        sections.forEach(function(section) {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            const navLink = document.querySelector('.nav-link[href="#' + sectionId + '"]');
-
-            if (navLink) {
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    navLinks.forEach(function(link) {
-                        link.classList.remove('active');
-                    });
-                    navLink.classList.add('active');
-                }
-            }
-        });
-    }
-
-    window.addEventListener('scroll', highlightNavLink);
 
     // =====================================================
     // Lazy Loading Images (Native + Fallback)
